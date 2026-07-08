@@ -1,23 +1,52 @@
-from threading_manager import listen_for_users
+import socket
+
+from threading_manager import listen_for_sockets
 import threading
 from SocketUtils.client import TCP_Client
 from SocketUtils.server import TCP_Server
 
 
+class Room:
+    def __init__(self, room_id: str, users: list[User] | None = None):
+        self.room_id = room_id
+        self.members = users
+
+    def getRoomId(self):
+        return self.room_id
+
+    def getMembers(self):
+        return self.members
+    def addMember(self, user: User):
+        if self.members:
+            self.members.append(user)
+    def removeMember(self, user: User):
+        if not self.members:
+            return
+
+        for i in range(len(self.members)):
+            curr_user = self.members[i]
+            if curr_user.getSessionId() == user.getSessionId():
+                self.members.pop(i)
+
 
 class Server(TCP_Server):
     def __init__(self, server_info):
         super().__init__(server_info)
-        self.listen_sock.bind(self.server_info.get_info())
-        self.listener = None
+        self.listen_thread = None
+        self.close_event = threading.Event()
         self.users = {}
+        self.rooms = {}
+        self.target_room = None
 
 
-    def start_server(self):
-        close_event = threading.Event()
-        listen_thread = threading.Thread(target=listen_for_users, args=(self.listen_sock, close_event))
+    def getCloseEvent(self):
+        return self.close_event
+
+    def start_server(self, awaiting_login: list[socket.socket] | []):
+        self.listen_sock.bind(self.server_info.get_info())
+        listen_thread = threading.Thread(target=listen_for_sockets, args=(self.listen_sock, awaiting_login, self.close_event))
         listen_thread.start()
-        self.listener = {"thread": listen_thread, "event": close_event}
+        self.listen_thread = listen_thread
 
 
     def close_server(self):
@@ -30,10 +59,32 @@ class Server(TCP_Server):
                 thread.join()
                 self.users.pop(key)
 
+    def emit(self, s: str):
+        for room in self.rooms:
+            for member in room.getMembers():
+                member.recv_sock.send_message(s)
+    def to(self, room_id) -> Server:
+        for key, room in self.rooms:
+            if key == room_id:
+                self.target_room = room_id
+        return self
+
+    def join(self, session_id, room_id):
+        user = self.users[session_id]
+        if not user:
+            return
+
+        # User can only join 1 room at a time
+        self.rooms[user.getRoomId()].removeMember(user)
+        self.rooms[room_id].addMember(user)
+        user.setRoomId(room_id)
+
+
+
 
 class User:
     def __init__(self, username, paraphrase, server_info):
-        self.sessionId = None
+        self.session_id = None
         self.roomId = None
         self.username = username
         self.paraphrase = paraphrase
@@ -41,6 +92,9 @@ class User:
         self.send_sock = None
         self.connected = False
         self.recv_sock = None
+
+    def getSessionId(self):
+        return self.session_id
 
     def getUsername(self):
         return self.username
@@ -51,6 +105,12 @@ class User:
         return self.server_info
     def setServerInfo(self, server_info):
         self.server_info = server_info
+
+    def getSockets(self):
+        return {
+            "send_sock": self.send_sock,
+            "recv_sock": self.recv_sock,
+        }
 
     def getRoomId(self):
         return self.roomId

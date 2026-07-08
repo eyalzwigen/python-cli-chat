@@ -1,5 +1,20 @@
 import hashlib
 import re
+import socket
+
+def disconnect_sockets(*sockets):
+    """
+    Disconnect all sockets given
+    :param sockets: sockets to disconnect
+    :return: None
+    """
+    for sock in sockets:
+        try:
+            assert isinstance(sock, socket.socket)
+            sock.shutdown(socket.SHUT_RDWR)
+            sock.close()
+        except AssertionError:
+            continue
 
 def sanitize_text(text):
     """

@@ -1,7 +1,7 @@
 from entities import User
 import socket
 import threading
-from utils import generate_user_session_id, sanitize_text
+from utils import generate_user_session_id, sanitize_text, disconnect_sockets
 
 MAX_BYTES = 1024
 
@@ -15,28 +15,32 @@ def join_room(user: User, data):
     if len(data) < 1:
         return
     
+def manage_client(user, close_event):
+    """
+    Where the magic happens: This functions manages
+    a conversation with each socket (concurrently).
+    Here the functions listens for messages and commands
+    from the client and does stuff.
 
-def manage_client(user_data, close_event):
-    send_soc = user_data["send_soc"]
-    recv_soc = user_data["recv_soc"]
+    :param user: A User object with the data of the current user.
+    :param close_event: the event that says to close the conversation
+    :return: None
+    """
+    sockets = user.getSockets()
+    send_sock = sockets["send_sock"]
+    recv_sock = sockets["recv_sock"]
     try:
         while not close_event.is_set():
-            message = send_soc.recv(MAX_BYTES).decode()
+            message = send_sock.recv(MAX_BYTES).decode()
             if not message:
                 break
             items = message.split(":")
             if not items[0] in MESSAGE_TYPES:
-                send_soc.sendall(" ".encode())
-            MESSAGE_TYPES[items[0]](user_data)
-        send_soc.shutdown(socket.SHUT_RDWR)
-        send_soc.close()
-        recv_soc.shutdown(socket.SHUT_RDWR)
-        recv_soc.close()
+                send_sock.sendall(" ".encode())
+            MESSAGE_TYPES[items[0]](user, message)
+        disconnect_sockets(send_sock, recv_sock)
     except Exception:
-        send_soc.shutdown(socket.SHUT_RDWR)
-        send_soc.close()
-        recv_soc.shutdown(socket.SHUT_RDWR)
-        recv_soc.close()
+        disconnect_sockets(send_sock, recv_sock)
 
 
 def log_user_in(client_soc: socket.socket, users, close_event):
@@ -57,7 +61,7 @@ def log_user_in(client_soc: socket.socket, users, close_event):
             users[session_id] = {
                 "user": user,
             }
-            client_thread = threading.Thread(target=client_soc.send, args=(users[session_id]["user"], close_event))
+            client_thread = threading.Thread(target=manage_client, args=(users[session_id]["user"], close_event))
             users[session_id]["thread"] = client_thread
         elif items[0] == "RECV_SOC":
             session_id = items[1]
@@ -66,9 +70,9 @@ def log_user_in(client_soc: socket.socket, users, close_event):
 
     client_soc.sendall(f" ".encode())
 
-def listen_for_users(listen_sock, users, close_event):
+def listen_for_sockets(listen_sock, awaiting_login: list[socket.socket], close_event):
     while not close_event.is_set():
         if listen_sock:
             listen_sock.listen(1)
             client_soc, _ = listen_sock.accept()
-            log_user_in(client_soc, users, close_event)
+            awaiting_login.append(client_soc)
