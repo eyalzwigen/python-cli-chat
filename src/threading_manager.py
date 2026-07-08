@@ -1,21 +1,11 @@
+from SocketUtils.client import TCP_Client
 from entities import User
-import socket
 import threading
+
+from src.entities import Server
 from utils import generate_user_session_id, sanitize_text, disconnect_sockets
-
-MAX_BYTES = 1024
-
-MESSAGE_TYPES = {
-    "JOIN": ...,
-    "LEAVE": ...,
-    "MESSAGE": ...,
-}
-
-def join_room(user: User, data):
-    if len(data) < 1:
-        return
     
-def manage_client(user, close_event):
+def manage_client(server: Server, user, close_event):
     """
     Where the magic happens: This functions manages
     a conversation with each socket (concurrently).
@@ -27,31 +17,29 @@ def manage_client(user, close_event):
     :return: None
     """
     sockets = user.getSockets()
-    send_sock = sockets["send_sock"]
-    recv_sock = sockets["recv_sock"]
+    send_sock: TCP_Client = sockets["send_sock"]
+    recv_sock: TCP_Client = sockets["recv_sock"]
     try:
         while not close_event.is_set():
-            message = send_sock.recv(MAX_BYTES).decode()
+            message = send_sock.listen_to_message()
             if not message:
                 break
-            items = message.split(":")
-            if not items[0] in MESSAGE_TYPES:
-                send_sock.sendall(" ".encode())
-            MESSAGE_TYPES[items[0]](user, message)
+            data = message.split(":")
+            server.execute(data, user)
         disconnect_sockets(send_sock, recv_sock)
     except Exception:
         disconnect_sockets(send_sock, recv_sock)
 
 
-def log_user_in(client_soc: socket.socket, users, close_event):
-    client_soc.sendall(f"START".encode())
-    message = client_soc.recv(MAX_BYTES).decode()
+def log_user_in(client_soc: TCP_Client, users, close_event):
+    client_soc.send_message("START")
+    message = client_soc.listen_to_message()
     if message:
         items = message.split(":")
         if items[0] == "INIT":
             username, paraphrase = items[1:]
             if username in users:
-                client_soc.sendall(" ".encode())
+                client_soc.send_message(" ")
             session_id = generate_user_session_id(paraphrase)
             client_soc.sendall(session_id.encode())
 
@@ -60,6 +48,7 @@ def log_user_in(client_soc: socket.socket, users, close_event):
             user.send_sock = client_soc
             users[session_id] = {
                 "user": user,
+                "thread": None
             }
             client_thread = threading.Thread(target=manage_client, args=(users[session_id]["user"], close_event))
             users[session_id]["thread"] = client_thread
@@ -70,9 +59,11 @@ def log_user_in(client_soc: socket.socket, users, close_event):
 
     client_soc.sendall(f" ".encode())
 
-def listen_for_sockets(listen_sock, awaiting_login: list[socket.socket], close_event):
+def listen_for_sockets(listen_sock, awaiting_login: list[TCP_Client], close_event):
     while not close_event.is_set():
         if listen_sock:
             listen_sock.listen(1)
             client_soc, _ = listen_sock.accept()
-            awaiting_login.append(client_soc)
+            tcp_client = TCP_Client(None)
+            tcp_client.socket = client_soc
+            awaiting_login.append(tcp_client)

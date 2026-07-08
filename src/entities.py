@@ -1,5 +1,5 @@
 import socket
-
+from src.utils import disconnect_sockets
 from threading_manager import listen_for_sockets
 import threading
 from SocketUtils.client import TCP_Client
@@ -48,7 +48,6 @@ class Server(TCP_Server):
         listen_thread.start()
         self.listen_thread = listen_thread
 
-
     def close_server(self):
         self.listener["event"].set()
         self.listen_sock.close()
@@ -59,23 +58,37 @@ class Server(TCP_Server):
                 thread.join()
                 self.users.pop(key)
 
+    def execute(self, data: list[str], user: User):
+        message_types = {
+            "JOIN": self.join,
+            "LEAVE": ...,
+            "MESSAGE": ...,
+            "DISCONNECT": ...,
+        }
+
+        action = data[0]
+        if action not in message_types:
+            user.getSockets()["send_sock"].send_message(" ")
+
+        message_types[data[0]](user, *data[:1])
+
     def emit(self, s: str):
         for room in self.rooms:
             for member in room.getMembers():
                 member.recv_sock.send_message(s)
     def to(self, room_id) -> Server:
-        for key, room in self.rooms:
+        for key, room in self.rooms.items():
             if key == room_id:
                 self.target_room = room_id
         return self
 
-    def join(self, session_id, room_id):
-        user = self.users[session_id]
-        if not user:
+    def join(self, user: User, room_id: str):
+        if not user or not room_id:
             return
 
         # User can only join 1 room at a time
-        self.rooms[user.getRoomId()].removeMember(user)
+        old_room = user.getRoomId()
+        self.rooms[old_room].removeMember(user)
         self.rooms[room_id].addMember(user)
         user.setRoomId(room_id)
 
@@ -85,7 +98,7 @@ class Server(TCP_Server):
 class User:
     def __init__(self, username, paraphrase, server_info):
         self.session_id = None
-        self.roomId = None
+        self.room_id = None
         self.username = username
         self.paraphrase = paraphrase
         self.server_info = server_info
@@ -113,9 +126,12 @@ class User:
         }
 
     def getRoomId(self):
-        return self.roomId
-    def setRoomId(self, roomId):
-        self.send_sock.send_message(f"{self.sessionId}:change_room:{roomId}")
+        return self.room_id
+    def setRoomId(self, room_id):
+        self.send_sock.send_message(f"JOIN:{room_id}")
+        res = self.send_sock.listen_to_message()
+        if res != " ":
+            self.room_id = room_id
 
     def connect(self):
         if self.connected:
@@ -132,8 +148,8 @@ class User:
         recv_sock.listen_to_message()
 
         send_sock.send_message(f"INIT:{self.username}:{self.paraphrase}")
-        self.sessionId = send_sock.listen_to_message()
-        if self.sessionId.isspace():
+        self.session_id = send_sock.listen_to_message()
+        if self.session_id.isspace():
             send_sock.disconnect()
             recv_sock.disconnect()
             self.send_sock = None
@@ -141,14 +157,13 @@ class User:
             print("Can't connect to server with username :(")
             return
 
-        recv_sock.recv_message(f"RECV_SOC:{self.sessionId}")
+        recv_sock.send_message(f"RECV_SOC:{self.session_id}")
         self.connected = True
 
     def disconnect(self):
-        self.send_sock.send_message(f"{self.sessionId}:disconnect")
+        self.send_sock.send_message(f"DISCONNECT")
 
-        self.send_sock.disconnect()
-        self.recv_sock.disconnect()
+        disconnect_sockets(self.send_sock, self.recv_sock)
         self.send_sock = None
         self.recv_sock = None
         self.connected = False
@@ -157,4 +172,4 @@ class User:
 
     def sendMessage(self, message):
         if self.send_sock:
-            self.send_sock.send_message(f"{self.sessionId}:{message}")
+            self.send_sock.send_message(f"{self.session_id}:{message}")
