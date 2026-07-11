@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chat-app-python"
+version = "0.1.0"
+description = "A Python Chat Application"
+requires-python = ">=3.8"
+
+[tool.setuptools.packages.find]
+# Tell setuptools to look inside the 'src' directory for packages
+where = ["src"]

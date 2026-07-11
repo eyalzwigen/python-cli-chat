@@ -2,6 +2,20 @@ import hashlib
 import re
 import socket
 
+def color_text(text: str, color: str) -> str:
+    colors = {
+        "RED": ["\033[91m", "\033[0m"],
+        "GREEN": ["\033[92m", "\033[0m"],
+        "BLUE": ["\033[94m", "\033[0m"],
+    }
+
+    if color not in colors.keys():
+        return text
+    color_start = colors[color][0]
+    color_end = colors[color][1]
+    return f"{color_start}{text}{color_end}"
+
+
 def disconnect_sockets(*sockets):
     """
     Disconnect all sockets given
@@ -9,12 +23,20 @@ def disconnect_sockets(*sockets):
     :return: None
     """
     for sock in sockets:
+        if sock is None:
+            continue
+
+        if hasattr(sock, "sock"):
+            sock = sock.sock
+
+        if not isinstance(sock, socket.socket):
+            continue
+
         try:
-            assert isinstance(sock, socket.socket)
             sock.shutdown(socket.SHUT_RDWR)
             sock.close()
-        except AssertionError:
-            continue
+        except OSError:
+            pass
 
 def sanitize_text(text):
     """

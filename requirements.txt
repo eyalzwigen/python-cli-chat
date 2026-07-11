@@ -1,0 +1,4 @@
+git+https://github.com/eyalzwigen/SocketUtils.git
+textual==8.2.8
+rich==15.0.0
+pyfiglet==1.0.4

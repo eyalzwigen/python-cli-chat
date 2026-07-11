@@ -1,0 +1,64 @@
+WelcomeScreen {
+    align: center middle;
+    padding-bottom: 2;
+
+    #welcome-container {
+        width: 100%;
+        height: auto;
+    }
+
+    #title-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    #button-row {
+        margin-top: 2;
+        width: 100%;
+        height: auto;
+    }
+}
+
+Setup,
+CreateRoom{
+    align: center middle;
+}
+
+Setup {
+    #form {
+        max-height: 30;
+        max-width: 50;
+    }
+}
+
+CreateRoom {
+    #form {
+        max-height: 20;
+        max-width: 60;
+    }
+}
+
+#form {
+    align: center middle;
+    height: 100%;
+    width: 100%;
+    #title-row {
+        width: 100%;
+        height: auto;
+    }
+    #form-details {
+        Input {
+            margin-bottom: 1;
+        }
+    }
+    }
+
+Button {
+    background: $panel;
+    color: $text;
+    content-align: center middle;
+}
+
+Button:hover {
+    background: $surface;
+}

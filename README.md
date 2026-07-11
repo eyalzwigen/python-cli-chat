@@ -9,8 +9,9 @@ manages chat rooms. chatting is via CLI
 3. My own SocketUtils module - a simple module that makes managing tcp client and servers easier
 
 ## How to install requirements
+Go to the root of the project and run this command
 ```bash
-pip install git+https://github.com/eyalzwigen/SocketUtils.git
+pip install -r requirements.txt
 ```
 
 
@@ -42,10 +43,10 @@ You should see something like this:
 copy the link that starts with __tcp://__.
 
 When connecting to the server in client.py, \
-the server address should be from tcp:// until the ':'.
+the server address should be from the first character after the tcp:// until the ':'.
 and the port will be the other part.
 
 #### Example
 __link:__ tcp://4.tcp.eu.ngrok.io:1234 \
-__server address:__ tcp://4.tcp.eu.ngrok.io \
+__server address:__ 4.tcp.eu.ngrok.io \
 __server port:__ 1234
