@@ -8,13 +8,15 @@ manages chat rooms. chatting is via CLI
 2. python's threading library - for concurrency
 3. My own SocketUtils module - a simple module that makes managing tcp client and servers easier
 
+## How to use the client app
+First, go to [this link](https://github.com/eyalzwigen/python-cli-chat/releases/tag/client_app) and install the app (according to your OS)
+
+
 ## How to install requirements
 Go to the root of the project and run this command
 ```bash
 pip install -r requirements.txt
 ```
-
-
 
 ## How to set up the server
 First go to server.py, and change SERVER_PORT to your port of choice.

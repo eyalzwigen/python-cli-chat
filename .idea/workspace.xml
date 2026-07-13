@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d4f3237-b097-454f-9d65-4874e221a25f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SERVER_LOGS-20260713-103139.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERVER_LOGS-20260713-103318.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/ui/components/message_log.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/ui/pages/chat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ui/components/button.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ui/components/button.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ui/components/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ui/components/card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ui/components/chatbox.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ui/components/theme.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ui/components/theme.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ui/pages/create_room.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ui/pages/create_room.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ui/pages/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ui/pages/rooms.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ui/pages/rooms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ui/pages/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ui/pages/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ui/pages/welcome.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ui/pages/welcome.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ui/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ui/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/entities.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/entities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +97,7 @@
       <workItem from="1783768412312" duration="1654000" />
       <workItem from="1783861507006" duration="8422000" />
       <workItem from="1783875801323" duration="13609000" />
-      <workItem from="1783925945450" duration="2346000" />
+      <workItem from="1783925945450" duration="3297000" />
     </task>
     <servers />
   </component>
