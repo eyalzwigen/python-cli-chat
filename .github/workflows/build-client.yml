@@ -1,4 +1,4 @@
-name: Build Server
+name: Build Client
 
 on:
   workflow_dispatch:
@@ -10,16 +10,16 @@ jobs:
       matrix:
         include:
           - os: windows-latest
-            artifact_name: Server-PythonChat-Windows
-            executable: dist/server.exe
+            artifact_name: PythonChat-Windows
+            executable: dist/PythonChat.exe
 
           - os: macos-latest
-            artifact_name: Server-PythonChat-macOS
-            executable: dist/server
+            artifact_name: PythonChat-macOS
+            executable: dist/PythonChat
 
           - os: ubuntu-latest
-            artifact_name: Server-PythonChat-Linux
-            executable: dist/server
+            artifact_name: PythonChat-Linux
+            executable: dist/PythonChat
 
     runs-on: ${{ matrix.os }}
 
@@ -38,17 +38,17 @@ jobs:
           python -m pip install -r requirements.txt
           python -m pip install pyinstaller
 
-      - name: Build server
+      - name: Build client
         run: >
           python -m PyInstaller
           --clean
           --onefile
-          --name server
+          --name PythonChat
           --paths src
           --collect-submodules shared
-          src/server/server.py
+          src/client/client.py
 
-      - name: Upload server executable
+      - name: Upload client executable
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact_name }}
