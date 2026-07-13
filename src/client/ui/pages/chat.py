@@ -9,8 +9,8 @@ from textual.containers import Horizontal, Vertical
 from textual.screen import Screen
 from textual.widgets import Input, Footer, Static
 from shared.entities import User, LEFT_ROOM
-from ui.components.button import Button
-from ui.components.message_log import MessageLog
+from client.ui.components.button import Button
+from client.ui.components.message_log import MessageLog
 
 
 class Chat(Screen):

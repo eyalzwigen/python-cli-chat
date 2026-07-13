@@ -2,12 +2,12 @@ from textual.app import App
 from SocketUtils.general import ServerInfo
 from shared.entities import User
 from shared.utils import disconnect_sockets
-from ui.components.theme import dracula_theme
-from ui.pages.create_room import CreateRoom
-from ui.pages.chat import Chat
-from ui.pages.setup import Setup
-from ui.pages.welcome import WelcomeScreen
-from ui.pages.rooms import Rooms
+from .ui.components.theme import dracula_theme
+from .ui.pages.create_room import CreateRoom
+from .ui.pages.chat import Chat
+from .ui.pages.setup import Setup
+from .ui.pages.welcome import WelcomeScreen
+from .ui.pages.rooms import Rooms
 
 CSS_PATH = "ui/styles/styles.css"
 LEAVE_COMMAND = "/leave"

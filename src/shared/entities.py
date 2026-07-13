@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import socket
 import json
 from .utils import disconnect_sockets, sanitize_text, generate_user_session_id
@@ -38,7 +40,7 @@ def listen_for_messages(client: "User", close_event):
         if message:
             print(message)
 
-def manage_client(server: Server, users: dict, user: "User", close_event):
+def manage_client(server: "Server", users: dict, user: "User", close_event):
     """
     Where the magic happens: This functions manages
     a conversation with each socket (concurrently).
@@ -52,8 +54,8 @@ def manage_client(server: Server, users: dict, user: "User", close_event):
     :return: None
     """
     sockets = user.getSockets()
-    send_sock: TCP_Client = sockets["send_sock"]
-    recv_sock: TCP_Client = sockets["recv_sock"]
+    send_sock: "TCP_Client" = sockets["send_sock"]
+    recv_sock: "TCP_Client" = sockets["recv_sock"]
     try:
         while not close_event.is_set():
             message = send_sock.listen_to_message()
@@ -82,7 +84,7 @@ def manage_client(server: Server, users: dict, user: "User", close_event):
             disconnect_sockets(send_sock.sock)
         if recv_sock:
             disconnect_sockets(recv_sock.sock)
-def log_user_in(server: Server, client_soc: TCP_Client, close_event):
+def log_user_in(server: "Server", client_soc: "TCP_Client", close_event):
     if close_event.is_set():
         return
 

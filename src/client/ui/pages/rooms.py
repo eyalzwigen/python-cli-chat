@@ -4,9 +4,9 @@ from textual.events import ScreenResume
 from textual.screen import Screen
 from textual.widgets import Label
 from shared.entities import User
-from ui.components.button import Button
-from ui.components.card import Card
-from ui.components.title import Title
+from client.ui.components.button import Button
+from client.ui.components.card import Card
+from client.ui.components.title import Title
 
 
 def joinRoom(app: App, user: "User", room_id: str):

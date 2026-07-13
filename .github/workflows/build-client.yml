@@ -38,6 +38,12 @@ jobs:
           python -m pip install -r requirements.txt
           python -m pip install pyinstaller
 
+      - name: Verify imports
+        env:
+          PYTHONPATH: src
+        run: |
+          python -c "import shared.entities; import client.ui; import client.ui.components.button; print('Client imports OK')"
+
       - name: Build client
         run: >
           python -m PyInstaller
@@ -46,6 +52,7 @@ jobs:
           --name PythonChat
           --paths src
           --collect-submodules shared
+          --collect-submodules client.ui
           src/client/client.py
 
       - name: Upload client executable

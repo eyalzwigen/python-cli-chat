@@ -6,8 +6,8 @@ from textual.screen import Screen
 from textual.widgets import Input, Static, Footer
 
 from shared.entities import User, MAX_ROOM_NAME_LENGTH, TOO_MUCH_LETTERS
-from ui.components.button import Button
-from ui.components.title import Title
+from client.ui.components.button import Button
+from client.ui.components.title import Title
 
 
 

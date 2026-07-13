@@ -3,8 +3,8 @@ from textual.containers import Vertical, Center
 from textual.screen import Screen
 from textual.widgets import Static, Input
 from shared.entities import USERNAME_EXISTS, CANT_CONNECT_TO_SERVER, User
-from ui.components.button import Button
-from ui.components.title import Title
+from client.ui.components.button import Button
+from client.ui.components.title import Title
 
 
 class Setup(Screen):

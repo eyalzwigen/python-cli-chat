@@ -1,7 +1,7 @@
 from textual.app import Screen, ComposeResult
 from textual.containers import Vertical, Center
-from ui.components.button import Button
-from ui.components.title import Title
+from client.ui.components.button import Button
+from client.ui.components.title import Title
 
 
 class WelcomeScreen(Screen):
