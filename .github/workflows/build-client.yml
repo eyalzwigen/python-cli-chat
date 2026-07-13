@@ -42,7 +42,7 @@ jobs:
         env:
           PYTHONPATH: src
         run: |
-          python -c "import shared.entities; import client.ui; import client.ui.components.button; print('Client imports OK')"
+          python -c "import shared.entities; import client.ui; import pyfiglet; print('Client imports OK')"
 
       - name: Build client
         run: >
@@ -53,6 +53,8 @@ jobs:
           --paths src
           --collect-submodules shared
           --collect-submodules client.ui
+          --collect-all pyfiglet
+          --add-data "src/client/ui/styles/styles.css:ui/styles"
           src/client/client.py
 
       - name: Upload client executable
