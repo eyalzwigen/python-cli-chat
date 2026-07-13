@@ -16,17 +16,12 @@ pip install -r requirements.txt
 ```
 
 ## How to set up the server
-First go to server.py, and change SERVER_PORT to your port of choice.
-
-Then go to your terminal. cd to the src folder.
-then run the command: 
+When running the program you need to choose a port on which to bind the server to. you can do this by using the -p flag or the --port argument. Example:
 ```bash
-python server.py
+python src/server/server.py -p 8080
 ```
-
-then you need to forward the port. You can use any service of your choice.
-
-This walkthrough will use ngrok.
+Now, because the server program listens on localhost, you will need to forward the port using some kindd of a service.
+This tutorial will use __Ngrok__, but you can choose whatever service you want.
 
 ### Setting up ngrok
 1. Follow the instructions on https://dashboard.ngrok.com/get-started/ (from step 1 to the authtoken step )
@@ -34,7 +29,7 @@ This walkthrough will use ngrok.
    ```bash
     ngrok tcp PORT
     ```
-   where PORT is the port of choice you put in server.py.
+where PORT is the port of choice you put in server.py (remember that if you didn't specify any port when running the server, it will be 8080 by default).
 
 You should see something like this:
 ![img.png](img.png)
@@ -49,3 +44,5 @@ and the port will be the other part.
 __link:__ tcp://4.tcp.eu.ngrok.io:1234 \
 __server address:__ 4.tcp.eu.ngrok.io \
 __server port:__ 1234
+
+This is how it should look like when you run the client app.
