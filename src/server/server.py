@@ -4,6 +4,7 @@ import threading
 from SocketUtils.client import TCP_Client
 from SocketUtils.general import ServerInfo
 from shared.entities import Server, log_user_in
+import sys
 
 SERVER_ADD = "127.0.0.1"
 
@@ -40,13 +41,13 @@ def main(parser: argparse.ArgumentParser, port):
         save_logs(logs)
         if server:
             server.close_server()
-        exit(0)
+        sys.exit(0)
     except Exception as err:
         save_logs(logs)
         print(err.with_traceback(None))
         if server:
             server.close_server()
-        exit(1)
+        sys.exit(1)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Welcome to the server program of PythonChatApp!")
