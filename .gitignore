@@ -1,4 +1,25 @@
-.venv
-*/chat_app_python.egg-info
-.pycache
-*/.pycache
+# Virtual environments
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Python package metadata
+*.egg-info/
+
+# Server logs
+SERVER_LOGS-*
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# IDE
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
