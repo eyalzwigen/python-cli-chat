@@ -4,6 +4,16 @@ But don't worry, I made it really easy to host your own server and I also wrote 
 
 ## Install Client App
 First, go to [this link](https://github.com/eyalzwigen/python-cli-chat/releases/tag/client_app) and install the app (according to your OS).\
+go to the download directory and open there the terminal. Then run this command:
+```bash
+./PythonChat
+```
+if that doesn't work, try:
+```bash
+PythonChat.exe
+```
+You can ignore the .exe if you are not using Windows.
+
 Enter the server address and port according to the explanations in [here](RUN_DEMO.md#example)
 
 ## Host Your Own Server
