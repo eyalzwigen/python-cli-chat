@@ -14,9 +14,7 @@ def save_logs(logs):
 
 
 def main(parser: argparse.ArgumentParser, port):
-    server_port = None
-    if port.isdigit():
-        server_port = int(port)
+    server_port = port
     if not server_port:
         parser.print_help()
         exit(1)
