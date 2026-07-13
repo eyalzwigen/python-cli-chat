@@ -13,8 +13,6 @@ When running the program you need to choose a port on which to bind the server t
 ./server -p 8080
 ```
 
-if you are not familiar with the terminal you can also double-click the program, and it will automatically set the port to __8080__.
-
 Now, because the server program listens on localhost, you will need to forward the port using some kindd of a service.
 This tutorial will use __Ngrok__, but you can choose whatever service you want.
 
