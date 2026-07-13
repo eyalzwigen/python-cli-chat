@@ -1,4 +1,4 @@
-from typing import Literal
+from typing import Literal, Tuple
 
 from textual.app import ComposeResult
 from textual.widget import Widget
@@ -13,14 +13,14 @@ class Card(Widget):
         width: int | str = "auto",
         border_weight: str = "tall",
         border_color: str = dracula_theme.secondary,
-        padding: int = 0,
+        padding: Tuple[int, int, int, int] = (0, 0, 0, 0),
         **kwargs
     ):
         super().__init__(**kwargs)
+        self.styles.background_color = dracula_theme.surface
         self.styles.height = height
         self.styles.width = width
         self.styles.border = (border_weight, border_color)
-        self.styles.padding = padding
         self.styles.overflow = "hidden hidden"
 
     def compose(self) -> ComposeResult:

@@ -20,9 +20,6 @@ class Setup(Screen):
                 yield Static("Enter username")
                 yield Input(placeholder="username...", id="username")
 
-                yield Static("Enter paraphrase")
-                yield Input(placeholder="paraphrase...", id="paraphrase")
-
                 yield Static("Enter server address")
                 yield Input(placeholder="server address...", id="server_address")
 
@@ -30,14 +27,11 @@ class Setup(Screen):
                 yield Input(placeholder="port...", id="port")
 
                 with Center():
-                    yield Button("Connect", onclick=self.handle_connection, height=3)
+                    yield Button("Connect", onclick=self.handle_connection, height=3, width=20)
 
     def handle_connection(self):
         username_input = self.query_one("#username", Input)
         username = username_input.value
-
-        paraphrase_input = self.query_one("#paraphrase", Input)
-        paraphrase = paraphrase_input.value
 
         address_input = self.query_one("#server_address", Input)
         server_address = address_input.value
@@ -49,11 +43,6 @@ class Setup(Screen):
         if not username:
             self.notify("Username is empty!", severity="error")
             username_input.focus()
-            return
-
-        if not paraphrase:
-            self.notify("Paraphrase is empty!", severity="error")
-            paraphrase_input.focus()
             return
 
         if not server_address:
@@ -74,14 +63,14 @@ class Setup(Screen):
 
 
         server_info = ServerInfo(server_address, int(port))
-        self.app.user = User(username, paraphrase, server_info)
+        self.app.user = User(username, server_info)
         res = self.app.user.connect()
         if res == USERNAME_EXISTS:
             self.notify(USERNAME_EXISTS, severity="error")
         elif res == CANT_CONNECT_TO_SERVER:
             self.notify(CANT_CONNECT_TO_SERVER, severity="error")
         else:
-            self.app.push_screen("rooms")
+            self.app.switch_screen("rooms")
     def on_mount(self):
         username_input = self.query_one("#username", Input)
         username_input.focus()

@@ -1,0 +1,24 @@
+NEW_CONNECTION: USERNAME: Hi mom!, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+ROOM_CREATED:Room Name: R1, Members: Hi mom! 
+MESSAGE_SENT: {'room_id': 'R1', 'user': 'Hi mom!', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'Hello'}
+NEW_CONNECTION: USERNAME: ggg, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+FETCHED_ROOMS:[{'room_id': 'R1', 'people_count': 1}]
+FETCHED_ROOMS:[{'room_id': 'R1', 'people_count': 1}]
+ROOM_CREATED:Room Name: R2, Members: ggg 
+MESSAGE_SENT: {'room_id': 'R2', 'user': 'ggg', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'Hello'}
+ROOM_DELETED_UPON_LEAVE:R1:ROOMS_LEFT:R2 | 
+FETCHED_ROOMS:[{'room_id': 'R2', 'people_count': 1}]
+USER_DISCONNECTED: USERNAME: Hi mom!, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+AT_THE_SAME_TIME:
+
+ERROR:
+Traceback (most recent call last):
+  File "/home/eyalzwig/Desktop/ChatAppPython/src/shared/entities.py", line 59, in manage_client
+    message = send_sock.listen_to_message()
+  File "/home/eyalzwig/Desktop/ChatAppPython/.venv/lib/python3.14/site-packages/SocketUtils/general.py", line 62, in listen_to_message
+    header = self._recv_exact(4)
+  File "/home/eyalzwig/Desktop/ChatAppPython/.venv/lib/python3.14/site-packages/SocketUtils/general.py", line 53, in _recv_exact
+    raise ConnectionError("Socket not connected")
+ConnectionError: Socket not connected
+
+ROOM_DELETED_UPON_LEAVE:R2:ROOMS_LEFT:

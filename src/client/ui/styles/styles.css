@@ -1,3 +1,103 @@
+#chat-page {
+    padding: 0 0 1 0;
+    width: 100%;
+    height: 100%;
+}
+
+#message-log {
+    padding: 0 1 0 1;
+    width: 100%;
+    height: 1fr;
+}
+
+#message-composer {
+    height: 3;
+    width: 100%;
+    layout: horizontal;
+    align-vertical: middle;
+}
+
+#message-input {
+    width: 1fr;
+    min-width: 0;
+    height: 100%;
+}
+
+#send-message {
+    width: 15;
+    min-width: 15;
+    height: 100%;
+}
+
+#rooms-page {
+    width: 100%;
+    height: 100%;
+    align-horizontal: center;
+}
+
+#rooms-title {
+    width: 100%;
+    height: auto;
+}
+
+#rooms-actions {
+    width: 70%;
+    height: auto;
+    align-horizontal: center;
+    margin: 1 0 2 0;
+}
+
+#rooms-actions Button {
+    margin: 0 1;
+}
+
+#rooms-list {
+    width: 40%;
+    align: center top;
+    padding-bottom: 2;
+}
+
+.room-card {
+    width: 100%;
+    height: 10;
+    border: tall $secondary;
+    background: $panel;
+    padding: 0 1 0 1;
+    margin-bottom: 1;
+}
+
+.room-info {
+    width: 100%;
+    height: 100%;
+    align-vertical: middle;
+}
+
+.room-details {
+    width: 1fr;
+    height: auto;
+}
+
+.room-name {
+    text-style: bold;
+    color: $text;
+}
+
+.room-count {
+    color: $text-muted;
+}
+
+.join-button {
+    width: 14;
+    height: 3;
+}
+
+#no-rooms {
+    width: 100%;
+    text-align: center;
+    color: $text-muted;
+    margin-top: 3;
+}
+
 WelcomeScreen {
     align: center middle;
     padding-bottom: 2;

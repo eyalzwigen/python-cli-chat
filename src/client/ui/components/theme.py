@@ -14,6 +14,7 @@ dracula_theme = Theme(
     panel="#21222C",        # Slightly darker panels
     dark=True,
     variables={
+        "button":"#38394a",
         "block-cursor-text-style": "none",
         "footer-key-foreground": "#8BE9FD",       # Cyan
         "input-selection-background": "#6272A4 50%",

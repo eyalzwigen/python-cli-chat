@@ -10,4 +10,4 @@ class WelcomeScreen(Screen):
             yield Title("Welcome to Python Chat!")
 
             with Center(id="button-row"):
-                yield Button("Start Chatting", onclick=self.app.push_screen, args=("setup",))
+                yield Button("Start Chatting", onclick=self.app.switch_screen, args=("setup",), height=3.5, width=20)

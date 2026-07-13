@@ -2,19 +2,6 @@ import hashlib
 import re
 import socket
 
-def color_text(text: str, color: str) -> str:
-    colors = {
-        "RED": ["\033[91m", "\033[0m"],
-        "GREEN": ["\033[92m", "\033[0m"],
-        "BLUE": ["\033[94m", "\033[0m"],
-    }
-
-    if color not in colors.keys():
-        return text
-    color_start = colors[color][0]
-    color_end = colors[color][1]
-    return f"{color_start}{text}{color_end}"
-
 
 def disconnect_sockets(*sockets):
     """
@@ -50,10 +37,9 @@ def sanitize_text(text):
 
     return text
 
-def generate_user_session_id(paraphrase: str) -> str:
+def generate_user_session_id() -> str:
     """
     Generate a session id for a user
-    :param paraphrase: the paraphrase
     :return: the session id
     """
-    return hashlib.md5(paraphrase.encode()).hexdigest()
+    return hashlib.md5().hexdigest()

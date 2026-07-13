@@ -1,0 +1,239 @@
+NEW_CONNECTION: USERNAME: Eyal, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+ROOM_CREATED:Room Name: Hello, World!, Members: Eyal 
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'Hi!'}
+NEW_CONNECTION: USERNAME: wefwfe, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+FETCHED_ROOMS:[{'room_id': 'Hello, World!', 'people_count': 1}]
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wefwewfwefwef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+FETCHED_ROOMS:[{'room_id': 'Hello, World!', 'people_count': 1}]
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wefwefewf'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'we'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'fwef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'w'}
+MESSAGE_SENT: {'room_id': 'Hello, World!', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'efwefew'}
+USER_DISCONNECTED: USERNAME: wefwfe, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+AT_THE_SAME_TIME:
+
+ERROR:
+Traceback (most recent call last):
+  File "/home/eyalzwig/Desktop/ChatAppPython/src/shared/entities.py", line 59, in manage_client
+    message = send_sock.listen_to_message()
+  File "/home/eyalzwig/Desktop/ChatAppPython/.venv/lib/python3.14/site-packages/SocketUtils/general.py", line 62, in listen_to_message
+    header = self._recv_exact(4)
+  File "/home/eyalzwig/Desktop/ChatAppPython/.venv/lib/python3.14/site-packages/SocketUtils/general.py", line 53, in _recv_exact
+    raise ConnectionError("Socket not connected")
+ConnectionError: Socket not connected
+
+NEW_CONNECTION: USERNAME: Eyal, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+ROOM_CREATED:Room Name: Hi Mom!, Members: Eyal 
+ROOM_DELETED_UPON_LEAVE:Hi Mom!:ROOMS_LEFT:
+ROOM_CREATED:Room Name: wefwefwef, Members: Eyal 
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'Hi momoefwwef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'we'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'fwe'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'fw'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'efwef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef\\wef\\wef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'we'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'fwe'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wefwefewfwef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wefwe'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'fwef'}
+NEW_CONNECTION: USERNAME: feweffwe, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+FETCHED_ROOMS:[{'room_id': 'wefwefwef', 'people_count': 1}]
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wefwefwef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wfe'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'we'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'fwe'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'fwef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'feweffwe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wefwef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'feweffwe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'feweffwe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'feweffwe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwefwef', 'user': 'feweffwe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+ROOM_DELETED_UPON_LEAVE:wefwefwef:ROOMS_LEFT:
+USER_DISCONNECTED: USERNAME: feweffwe, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+AT_THE_SAME_TIME:
+
+ERROR:
+Traceback (most recent call last):
+  File "/home/eyalzwig/Desktop/ChatAppPython/src/shared/entities.py", line 59, in manage_client
+    message = send_sock.listen_to_message()
+  File "/home/eyalzwig/Desktop/ChatAppPython/.venv/lib/python3.14/site-packages/SocketUtils/general.py", line 62, in listen_to_message
+    header = self._recv_exact(4)
+  File "/home/eyalzwig/Desktop/ChatAppPython/.venv/lib/python3.14/site-packages/SocketUtils/general.py", line 53, in _recv_exact
+    raise ConnectionError("Socket not connected")
+ConnectionError: Socket not connected
+
+NEW_CONNECTION: USERNAME: EZ Gamer, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+ROOM_CREATED:Room Name: wefwef, Members: EZ Gamer 
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wefwefwefwef'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'we'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'fwe'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'f'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+NEW_CONNECTION: USERNAME: EZ DJ, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+FETCHED_ROOMS:[{'room_id': 'wefwef', 'people_count': 1}]
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ DJ', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'Hi mom!'}
+FETCHED_ROOMS:[{'room_id': 'wefwef', 'people_count': 1}]
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'fff'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'f'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'f'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'f'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'f'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'f'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'f'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'f'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EZ Gamer', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'f'}
+FETCHED_ROOMS:[{'room_id': 'wefwef', 'people_count': 1}]
+ROOM_CREATED:Room Name: fefe, Members: EZ Gamer 
+ROOM_DELETED_UPON_LEAVE:wefwef:ROOMS_LEFT:fefe | 
+USER_DISCONNECTED: USERNAME: EZ DJ, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+AT_THE_SAME_TIME:
+
+ERROR:
+Traceback (most recent call last):
+  File "/home/eyalzwig/Desktop/ChatAppPython/src/shared/entities.py", line 59, in manage_client
+    message = send_sock.listen_to_message()
+  File "/home/eyalzwig/Desktop/ChatAppPython/.venv/lib/python3.14/site-packages/SocketUtils/general.py", line 62, in listen_to_message
+    header = self._recv_exact(4)
+  File "/home/eyalzwig/Desktop/ChatAppPython/.venv/lib/python3.14/site-packages/SocketUtils/general.py", line 53, in _recv_exact
+    raise ConnectionError("Socket not connected")
+ConnectionError: Socket not connected
+
+NEW_CONNECTION: USERNAME: wefwfe, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+ROOM_CREATED:Room Name: fff, Members: wefwfe 
+MESSAGE_SENT: {'room_id': 'fff', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'fewfweef'}
+MESSAGE_SENT: {'room_id': 'fff', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'fff', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'fff', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+ROOM_DELETED_UPON_LEAVE:fff:ROOMS_LEFT:
+ROOM_CREATED:Room Name: wefwefewf, Members: wefwfe 
+MESSAGE_SENT: {'room_id': 'wefwefewf', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wefwef'}
+MESSAGE_SENT: {'room_id': 'wefwefewf', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwefewf', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwefewf', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wefw'}
+MESSAGE_SENT: {'room_id': 'wefwefewf', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'f'}
+MESSAGE_SENT: {'room_id': 'wefwefewf', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'f'}
+MESSAGE_SENT: {'room_id': 'wefwefewf', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'f'}
+MESSAGE_SENT: {'room_id': 'wefwefewf', 'user': 'wefwfe', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'f'}
+ROOM_DELETED_UPON_LEAVE:wefwefewf:ROOMS_LEFT:
+USER_DISCONNECTED: USERNAME: wefwfe, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+AT_THE_SAME_TIME:
+
+ERROR:
+Traceback (most recent call last):
+  File "/home/eyalzwig/Desktop/ChatAppPython/src/shared/entities.py", line 59, in manage_client
+    message = send_sock.listen_to_message()
+  File "/home/eyalzwig/Desktop/ChatAppPython/.venv/lib/python3.14/site-packages/SocketUtils/general.py", line 62, in listen_to_message
+    header = self._recv_exact(4)
+  File "/home/eyalzwig/Desktop/ChatAppPython/.venv/lib/python3.14/site-packages/SocketUtils/general.py", line 53, in _recv_exact
+    raise ConnectionError("Socket not connected")
+ConnectionError: Socket not connected
+
+NEW_CONNECTION: USERNAME: Eyal, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+ROOM_CREATED:Room Name: R1, Members: Eyal 
+MESSAGE_SENT: {'room_id': 'R1', 'user': 'Eyal', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'Hi Mom!'}
+NEW_CONNECTION: USERNAME: Tomy, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+ROOM_CREATED:Room Name: Hi!, Members: Tomy 
+MESSAGE_SENT: {'room_id': 'Hi!', 'user': 'Tomy', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'ffff'}
+MESSAGE_SENT: {'room_id': 'Hi!', 'user': 'Tomy', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'efwef'}
+MESSAGE_SENT: {'room_id': 'Hi!', 'user': 'Tomy', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hi!', 'user': 'Tomy', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hi!', 'user': 'Tomy', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+ROOM_DELETED_UPON_LEAVE:Hi!:ROOMS_LEFT:
+USER_DISCONNECTED: USERNAME: Tomy, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+AT_THE_SAME_TIME:
+
+ERROR:
+Traceback (most recent call last):
+  File "/home/eyalzwig/Desktop/ChatAppPython/src/shared/entities.py", line 59, in manage_client
+    message = send_sock.listen_to_message()
+  File "/home/eyalzwig/Desktop/ChatAppPython/.venv/lib/python3.14/site-packages/SocketUtils/general.py", line 62, in listen_to_message
+    header = self._recv_exact(4)
+  File "/home/eyalzwig/Desktop/ChatAppPython/.venv/lib/python3.14/site-packages/SocketUtils/general.py", line 53, in _recv_exact
+    raise ConnectionError("Socket not connected")
+ConnectionError: Socket not connected
+
+NEW_CONNECTION: USERNAME: EE, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+ROOM_CREATED:Room Name: Hi mom!, Members: EE 
+MESSAGE_SENT: {'room_id': 'Hi mom!', 'user': 'EE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'ffefwefwef'}
+MESSAGE_SENT: {'room_id': 'Hi mom!', 'user': 'EE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'efw'}
+MESSAGE_SENT: {'room_id': 'Hi mom!', 'user': 'EE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'Hi mom!', 'user': 'EE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wefw'}
+MESSAGE_SENT: {'room_id': 'Hi mom!', 'user': 'EE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'efwe'}
+MESSAGE_SENT: {'room_id': 'Hi mom!', 'user': 'EE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wefe'}
+MESSAGE_SENT: {'room_id': 'Hi mom!', 'user': 'EE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wfwe'}
+ROOM_DELETED_UPON_LEAVE:Hi mom!:ROOMS_LEFT:
+ROOM_CREATED:Room Name: wefwef, Members: EE 
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'fwef'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wwef'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+NEW_CONNECTION: USERNAME: wefwef, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+FETCHED_ROOMS:[{'room_id': 'wefwef', 'people_count': 1}]
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wefwefwef'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'EE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'wefwef', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wefewf'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'wefwef', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+MESSAGE_SENT: {'room_id': 'wefwef', 'user': 'wefwef', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'wef'}
+NEW_CONNECTION: USERNAME: EEEE, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+ROOM_CREATED:Room Name: R2, Members: EEEE 
+MESSAGE_SENT: {'room_id': 'R2', 'user': 'EEEE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'Hello'}
+ROOM_DELETED_UPON_LEAVE:R2:ROOMS_LEFT:
+ROOM_CREATED:Room Name: fewwef, Members: EEEE 
+MESSAGE_SENT: {'room_id': 'fewwef', 'user': 'EEEE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'yoooooo'}
+NEW_CONNECTION: USERNAME: RRRR, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+FETCHED_ROOMS:[{'room_id': 'fewwef', 'people_count': 1}]
+MESSAGE_SENT: {'room_id': 'fewwef', 'user': 'RRRR', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'Hi mom!'}
+MESSAGE_SENT: {'room_id': 'fewwef', 'user': 'EEEE', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'Hi son!'}
+NEW_CONNECTION: USERNAME: RRF, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+FETCHED_ROOMS:[{'room_id': 'fewwef', 'people_count': 2}]
+ROOM_CREATED:Room Name: R3, Members: RRF 
+MESSAGE_SENT: {'room_id': 'R3', 'user': 'RRF', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'Hi mom!'}
+FETCHED_ROOMS:[{'room_id': 'fewwef', 'people_count': 1}, {'room_id': 'R3', 'people_count': 1}]
+MESSAGE_SENT: {'room_id': 'R3', 'user': 'RRRR', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'Hello!'}
+MESSAGE_SENT: {'room_id': 'R3', 'user': 'RRF', 'session_id': 'd41d8cd98f00b204e9800998ecf8427e', 'message': 'hi!'}
+ROOM_DELETED_UPON_LEAVE:fewwef:ROOMS_LEFT:R3 | 
+ROOM_DELETED_UPON_LEAVE:R3:ROOMS_LEFT:
+USER_DISCONNECTED: USERNAME: RRF, SESSION_ID: d41d8cd98f00b204e9800998ecf8427e
+AT_THE_SAME_TIME:
+
+ERROR:
+Traceback (most recent call last):
+  File "/home/eyalzwig/Desktop/ChatAppPython/src/shared/entities.py", line 59, in manage_client
+    message = send_sock.listen_to_message()
+  File "/home/eyalzwig/Desktop/ChatAppPython/.venv/lib/python3.14/site-packages/SocketUtils/general.py", line 62, in listen_to_message
+    header = self._recv_exact(4)
+  File "/home/eyalzwig/Desktop/ChatAppPython/.venv/lib/python3.14/site-packages/SocketUtils/general.py", line 53, in _recv_exact
+    raise ConnectionError("Socket not connected")
+ConnectionError: Socket not connected
+

@@ -1,7 +1,9 @@
+from textual import events
 from textual.app import ComposeResult
+from textual.binding import Binding
 from textual.containers import Vertical, Center
 from textual.screen import Screen
-from textual.widgets import Input, Static
+from textual.widgets import Input, Static, Footer
 
 from shared.entities import User, MAX_ROOM_NAME_LENGTH, TOO_MUCH_LETTERS
 from ui.components.button import Button
@@ -10,6 +12,11 @@ from ui.components.title import Title
 
 
 class CreateRoom(Screen):
+
+    BINDINGS = [
+        Binding("escape", "go_back", "Go Back"),
+    ]
+
     def __init__(self):
         super().__init__()
 
@@ -19,13 +26,18 @@ class CreateRoom(Screen):
         if not room_name:
             self.notify("Room Name cannot be empty!", severity="error")
             return
-        if room_name > MAX_ROOM_NAME_LENGTH:
+        if len(room_name) > MAX_ROOM_NAME_LENGTH:
             self.notify(TOO_MUCH_LETTERS, severity="error")
+            return
 
         user: "User" = self.app.user
         res = user.createRoom(room_name)
         if res:
             self.notify(res, severity="error")
+            return
+        self.query_one("#room_name", Input).clear()
+        self.app.switch_screen("chat")
+
     def compose(self) -> ComposeResult:
         with Vertical(id="form"):
             with Center(id="title-row"):
@@ -36,6 +48,10 @@ class CreateRoom(Screen):
                 yield Input(placeholder="room name...", id="room_name")
 
                 with Center():
-                    yield Button("Connect", onclick=self.create_room, height=3)
+                    yield Button("Connect", onclick=self.create_room, height=3, width=20)
+        yield Footer()
     def on_input_submitted(self, event: Input.Submitted):
         self.create_room()
+
+    def action_go_back(self):
+        self.app.switch_screen("rooms")

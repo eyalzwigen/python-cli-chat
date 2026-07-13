@@ -1,0 +1,4 @@
+.venv
+*/chat_app_python.egg-info
+.pycache
+*/.pycache
