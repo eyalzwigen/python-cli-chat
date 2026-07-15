@@ -6,7 +6,7 @@ from SocketUtils.general import ServerInfo
 from shared.entities import Server, log_user_in
 import sys
 
-SERVER_ADD = "127.0.0.1"
+SERVER_ADD = "0.0.0.0"
 
 def save_logs(logs):
     with open(f"SERVER_LOGS-{datetime.now().strftime('%Y%m%d-%H%M%S')}.txt", "w") as f:
