@@ -7,6 +7,9 @@ import threading
 from SocketUtils.client import TCP_Client
 from SocketUtils.server import TCP_Server
 
+SERVER_ADDRESS = "eilzwig@hackclub.app"
+PORT = 8080
+
 CANT_CONNECT_TO_SERVER = "Can't connect to server!"
 USERNAME_EXISTS = "Username already exists!"
 ERROR_CONNECTING_RECEIVER = "Error connecting receiver socket"

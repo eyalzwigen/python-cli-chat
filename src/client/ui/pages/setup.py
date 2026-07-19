@@ -2,7 +2,7 @@ from SocketUtils.general import ServerInfo
 from textual.containers import Vertical, Center
 from textual.screen import Screen
 from textual.widgets import Static, Input
-from shared.entities import USERNAME_EXISTS, CANT_CONNECT_TO_SERVER, User
+from shared.entities import USERNAME_EXISTS, CANT_CONNECT_TO_SERVER, User, SERVER_ADDRESS, PORT
 from client.ui.components.button import Button
 from client.ui.components.title import Title
 
@@ -20,11 +20,13 @@ class Setup(Screen):
                 yield Static("Enter username")
                 yield Input(placeholder="username...", id="username")
 
+                """             
                 yield Static("Enter server address")
                 yield Input(placeholder="server address...", id="server_address")
 
                 yield Static("Enter port")
                 yield Input(placeholder="port...", id="port")
+                """
 
                 with Center():
                     yield Button("Connect", onclick=self.handle_connection, height=3, width=20)
@@ -33,11 +35,13 @@ class Setup(Screen):
         username_input = self.query_one("#username", Input)
         username = username_input.value
 
+        """
         address_input = self.query_one("#server_address", Input)
         server_address = address_input.value
 
         port_input = self.query_one("#port", Input)
         port = port_input.value
+        """
 
 
         if not username:
@@ -45,6 +49,7 @@ class Setup(Screen):
             username_input.focus()
             return
 
+        """
         if not server_address:
             self.notify("Server address is empty!", severity="error")
             address_input.focus()
@@ -59,10 +64,11 @@ class Setup(Screen):
             self.notify("Port is invalid!", severity="error")
             port_input.focus()
             return
+        """
 
 
 
-        server_info = ServerInfo(server_address, int(port))
+        server_info = ServerInfo(SERVER_ADDRESS, PORT)
         self.app.user = User(username, server_info)
         res = self.app.user.connect()
         if res == USERNAME_EXISTS:

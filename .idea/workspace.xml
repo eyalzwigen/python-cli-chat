@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d4f3237-b097-454f-9d65-4874e221a25f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.py" afterDir="false" />
+    <list default="true" id="9d4f3237-b097-454f-9d65-4874e221a25f" name="Changes" comment="Change server address binding to 0.0.0.0 (all IPv4 network interfaces)">
+      <changelist_data name="Eyal Zwigenbom" email="eyalzwig@gmail.com" automatic="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,5 +116,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Change server address binding to 0.0.0.0 (all IPv4 network interfaces)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change server address binding to 0.0.0.0 (all IPv4 network interfaces)" />
   </component>
 </project>

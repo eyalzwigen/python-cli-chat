@@ -1,7 +1,4 @@
 # Run Demo
-Because I couldn't find any free TCP hosting services, you will need to host your own server. \
-But don't worry, I made it really easy to host your own server and I also wrote a walkthrough on how to do it :)
-
 ## Install Client App
 First, go to [this link](https://github.com/eyalzwigen/python-cli-chat/releases/tag/client_app) and install the app (according to your OS).\
 go to the download directory and open there the terminal. Then run this command:
@@ -13,8 +10,6 @@ if that doesn't work, try:
 PythonChat.exe
 ```
 You can ignore the .exe if you are not using Windows.
-
-Enter the server address and port according to the explanations in [here](RUN_DEMO.md#example)
 
 ## Host Your Own Server
 Install the server program from [this link](https://github.com/eyalzwigen/python-cli-chat/releases/tag/server_program). \
@@ -45,7 +40,7 @@ and the port will be the other part.
 
 #### Example
 __link:__ tcp://4.tcp.eu.ngrok.io:1234 \
-__server address:__ 4.tcp.eu.ngrok.io \
-__server port:__ 1234
+__SERVER_ADDRESS:__ 4.tcp.eu.ngrok.io \
+__PORT:__ 1234
 
-This is how it should look like when you run the client app.
+Please make sure you set these variables in shared/entities.py like showed

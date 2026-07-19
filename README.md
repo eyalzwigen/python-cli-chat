@@ -42,7 +42,7 @@ and the port will be the other part.
 
 #### Example
 __link:__ tcp://4.tcp.eu.ngrok.io:1234 \
-__server address:__ 4.tcp.eu.ngrok.io \
-__server port:__ 1234
+__SERVER_ADDRESS:__ 4.tcp.eu.ngrok.io \
+__PORT:__ 1234
 
-This is how it should look like when you run the client app.
+Please make sure you set these variables in shared/entities.py like showed
