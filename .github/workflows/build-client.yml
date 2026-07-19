@@ -87,14 +87,6 @@ jobs:
           path: release-assets
           merge-multiple: true
 
-      - name: Delete old ZIP assets
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh release delete-asset client_app PythonChat-Windows.zip --yes --repo ${{ github.repository }} || true
-          gh release delete-asset client_app PythonChat-macOS.zip --yes --repo ${{ github.repository }} || true
-          gh release delete-asset client_app PythonChat-Linux.zip --yes --repo ${{ github.repository }} || true
-
       - name: Replace release assets
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
