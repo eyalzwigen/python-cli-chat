@@ -6,20 +6,19 @@ from SocketUtils.general import ServerInfo
 from shared.entities import Server, log_user_in
 import sys
 
-SERVER_ADD = "0.0.0.0"
-
 def save_logs(logs):
     with open(f"SERVER_LOGS-{datetime.now().strftime('%Y%m%d-%H%M%S')}.txt", "w") as f:
         for log in logs:
             f.write(log + "\n")
 
 
-def main(parser: argparse.ArgumentParser, port):
+def main(ps: argparse.ArgumentParser, address, port):
+    server_address = address
     server_port = port
-    if not server_port:
-        parser.print_help()
+    if not server_port or not server_address:
+        ps.print_help()
         exit(1)
-    server_info = ServerInfo(SERVER_ADD, server_port)
+    server_info = ServerInfo(server_address, server_port)
     logs = []
     server = None
     try:
@@ -27,7 +26,7 @@ def main(parser: argparse.ArgumentParser, port):
         awaiting_login: list[TCP_Client] = []
         server = Server(server_info=server_info, logs=logs)
         server.start_server(awaiting_login)
-        print(f"Listening on port {server_port}")
+        print(f"Listening on tcp://{server_address}:{server_port}")
         while True:
             for socket in awaiting_login:
                 if not socket:
@@ -52,4 +51,6 @@ def main(parser: argparse.ArgumentParser, port):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Welcome to the server program of PythonChatApp!")
     parser.add_argument("-p", "--port", default=8080, type=int)
-    main(parser, parser.parse_args().port)
+    parser.add_argument("--address", default="localhost", type=str)
+    parsed_args = parser.parse_args()
+    main(parser, parsed_args.server, parsed_args.port)
